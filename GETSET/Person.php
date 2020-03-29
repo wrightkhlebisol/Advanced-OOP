@@ -1,9 +1,9 @@
 <?php
 class Person
 {
-    public $age;
+    private $age;
 
-    public $name;
+    private $name;
 
     public function __construct($name)
     {
