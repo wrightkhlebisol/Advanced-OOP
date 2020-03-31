@@ -13,14 +13,19 @@ class Staff
 {
     protected $members = [];
 
-    public function __construct($members = [])
+    public function __construct(Person $person)
     {
-        $this->members[] = $members;
+        return $this->members[] = $person;
     }
 
     public function add(Person $person)
     {
-        $this->members[] = $person;
+        return $this->members[] = $person;
+    }
+
+    public function getMembers()
+    {
+        return $this->members;
     }
 }
 
@@ -41,10 +46,12 @@ class Business
 }
 
 $caleb = new Person("Caleb Ogundiya");
+$esther = new Person("Esther Akinloose");
 
-$staff = new Staff;
+$staff = new Staff($caleb);
 
 $laracasts = new Business($staff);
-$laracasts->hire($caleb);
 
-var_dump($staff);
+$laracasts->hire($esther);
+
+var_dump($staff->getMembers());
