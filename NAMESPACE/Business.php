@@ -1,4 +1,7 @@
 <?php
+
+namespace Laracasts;
+
 class Business
 {
     protected $staff;

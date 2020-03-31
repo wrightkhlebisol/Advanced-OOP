@@ -1,5 +1,7 @@
 <?php
 
+namespace Laracasts;
+
 class Person
 {
     protected $name;

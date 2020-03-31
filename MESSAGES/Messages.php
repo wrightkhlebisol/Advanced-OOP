@@ -1,15 +1,12 @@
 <?php
+require '../vendor/autoload.php';
 
-require '../NAMESPACE/Business.php';
-require '../NAMESPACE/Staff.php';
-require '../NAMESPACE/Person.php';
+$caleb = new Laracasts\Person("Caleb Ogundiya");
+$esther = new Laracasts\Person("Esther Akinloose");
 
-$caleb = new Person("Caleb Ogundiya");
-$esther = new Person("Esther Akinloose");
+$staff = new Laracasts\Staff($caleb);
 
-$staff = new Staff($caleb);
-
-$laracasts = new Business($staff);
+$laracasts = new Laracasts\Business($staff);
 
 $laracasts->hire($esther);
 
