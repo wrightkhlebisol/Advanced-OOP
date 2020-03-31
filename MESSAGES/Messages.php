@@ -1,5 +1,9 @@
 <?php
 
+require '../NAMESPACE/Business.php';
+require '../NAMESPACE/Staff.php';
+require '../NAMESPACE/Person.php';
+
 $caleb = new Person("Caleb Ogundiya");
 $esther = new Person("Esther Akinloose");
 
