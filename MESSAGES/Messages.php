@@ -9,18 +9,42 @@ class Person
     }
 }
 
+class Staff
+{
+    protected $members = [];
+
+    public function __construct($members = [])
+    {
+        $this->members[] = $members;
+    }
+
+    public function add(Person $person)
+    {
+        $this->members[] = $person;
+    }
+}
+
 class Business
 {
-    public function __construct()
+    protected $staff;
+
+    public function __construct(Staff $staff)
     {
+        $this->staff = $staff;
     }
 
     public function hire(Person $person)
     {
         // add person to staff collection
+        $this->staff->add($person);
     }
 }
 
-class staff
-{
-}
+$caleb = new Person("Caleb Ogundiya");
+
+$staff = new Staff;
+
+$laracasts = new Business($staff);
+$laracasts->hire($caleb);
+
+var_dump($staff);
