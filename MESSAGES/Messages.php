@@ -1,5 +1,4 @@
 <?php
-require '../vendor/autoload.php';
 
 $caleb = new Laracasts\Person("Caleb Ogundiya");
 $esther = new Laracasts\Person("Esther Akinloose");
