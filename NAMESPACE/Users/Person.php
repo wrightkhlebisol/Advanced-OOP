@@ -1,6 +1,6 @@
 <?php
 
-namespace Laracasts;
+namespace Laracasts\Users;
 
 class Person
 {

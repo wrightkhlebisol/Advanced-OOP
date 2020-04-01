@@ -1,11 +1,13 @@
 <?php
 
-$caleb = new Laracasts\Person("Caleb Ogundiya");
-$esther = new Laracasts\Person("Esther Akinloose");
+use Laracasts\{Users\Person, Staff, Business};
 
-$staff = new Laracasts\Staff($caleb);
+$caleb = new Person("Caleb Ogundiya");
+$esther = new Person("Esther Akinloose");
 
-$laracasts = new Laracasts\Business($staff);
+$staff = new Staff($caleb);
+
+$laracasts = new Business($staff);
 
 $laracasts->hire($esther);
 

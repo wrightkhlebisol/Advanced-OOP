@@ -2,6 +2,8 @@
 
 namespace Laracasts;
 
+use Laracasts\Users\Person;
+
 class Business
 {
     protected $staff;
