@@ -11,14 +11,19 @@ class NewPerson
 {
     public static $age = 0;
 
-    public function haveBirthday()
+    public static function haveBirthday()
     {
         return static::$age += 1;
     }
 }
 
-// echo (new Math)->add(1, 2, 3, 4, 5);
+class BankAccount
+{
+    public static $tax = .05;
 
-$joe = (new NewPerson)->age;
-echo $joe;
-// echo $joe->haveBirthday();
+    protected abstract function getTax();
+}
+
+echo BankAccount::$tax;
+$account1 = new BankAccount;
+$account1::$tax = 10;
