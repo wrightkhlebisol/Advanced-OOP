@@ -19,11 +19,12 @@ class NewPerson
 
 class BankAccount
 {
-    public static $tax = .05;
+    const TAX = .05;
 
-    protected abstract function getTax();
+    // protected abstract function getTax();
 }
 
-echo BankAccount::$tax;
+echo BankAccount::TAX;
 $account1 = new BankAccount;
-$account1::$tax = 10;
+
+// $account1::$tax = 10;
