@@ -2,4 +2,4 @@
 
 require 'vendor/autoload.php';
 
-require 'MESSAGES/Messages.php';
+require 'MVC/index.php';
