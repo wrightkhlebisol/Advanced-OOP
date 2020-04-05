@@ -2,9 +2,10 @@
 
 interface Logger
 {
+    public function execute($message);
 }
 
-class LogToFile
+class LogToFile implements Logger
 {
     public function execute($message)
     {
@@ -12,7 +13,7 @@ class LogToFile
     }
 }
 
-class LogToDatabase
+class LogToDatabase implements Logger
 {
     public function execute($message)
     {
@@ -27,7 +28,7 @@ class UsersController
 {
     private $logger;
 
-    public function __construct(LogToFile $logger)
+    public function __construct(Logger $logger)
     {
         $this->logger = $logger;
     }
@@ -42,6 +43,6 @@ class UsersController
     }
 }
 
-$controller = new UsersController(new LogToFile);
+$controller = new UsersController(new LogToDatabase);
 
 $controller->show();
